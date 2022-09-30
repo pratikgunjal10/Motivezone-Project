@@ -1,0 +1,194 @@
+.footer {
+    text-align: center;
+    background-color: $color-lightblack;
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-up(sm) {
+        text-align: initial;
+    }
+
+    &__content {
+        padding: 0 25px;
+
+        @include media-breakpoint-up(md) {
+            width: 97%;
+            padding: 0 15px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: 1110px;
+            padding: 0 30px;
+        }
+    }
+
+    &__wrapper {
+        padding: 80px 0;
+
+        div {
+            @include media-breakpoint-up(sm) {
+                padding: 10px;
+            }
+
+            @include media-breakpoint-up(md) {
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                padding-left: 30px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 60px;
+            }
+            ul{
+                line-height: 32px;
+            }
+        }
+    }
+
+    &__logo {
+        font-size: 32px;
+        font-weight: 700;
+        color: $color-white;
+
+        img {
+            width: unset;
+            margin-right: 10px;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $color-white;
+        margin-top: 20px;
+
+        &-link {
+            font-size: 15px;
+            font-weight: 400;
+            color: $color-dark;
+        }
+
+    }
+
+    &__text {
+        font-size: 15px;
+        font-weight: 400;
+        color: $color-dark;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &-email {
+            border-radius: 5px;
+            padding: 12px 0;
+            width: 100%;
+            border: 1px solid #EDE5D9;
+            background: #FAF9F7;
+            padding-left: 20px;
+            font-size: 15px;
+            font-weight: 400;
+            color: $color-lightdark;
+
+            &:focus-visible {
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+
+        &-submit {
+            position: absolute;
+            right: -1px;
+            width: 19%;
+            top: 0;
+            padding: 13px 0;
+            background-color: $color-darkblue;
+            border: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            &:hover {
+                background-color: $color-yellow;
+                color: $color-white;
+            }
+        }
+
+    }
+
+
+    &__icons {
+        padding: 0;
+        list-style: none;
+        margin: 1em;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        li {
+            display: inline-block;
+            margin: 0.15em;
+            position: relative;
+            font-size: 16px;
+
+        }
+
+        i {
+            color: $color-white;
+            position: absolute;
+            top: 13px;
+            left: 13.5px;
+            transition: all $timing ease-out;
+        }
+
+        a {
+            display: inline-block;
+
+            &:before {
+                @include transformScale();
+                content: " ";
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                display: block;
+                background: linear-gradient(45deg, $iconColor, $accent);
+                transition: all $timing ease-out;
+            }
+
+            &:hover:before {
+                transform: scale(0);
+                transition: all $timing ease-in;
+            }
+
+            &:hover i {
+                @include transformScale(2.2);
+                color: $iconColor;
+                background: -webkit-linear-gradient(45deg, $iconColor, $accent);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: all $timing ease-in;
+            }
+        }
+    }
+    &__copyright {
+        align-items: center;
+        row-gap: 20px;
+        justify-content: space-between;
+
+        div {
+            &:first-child {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            &:last-child {
+                text-align: center;
+                @include media-breakpoint-up(md) {
+                    text-align: end;
+                }
+            }
+        }
+    }
+}
